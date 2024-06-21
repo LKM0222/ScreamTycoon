@@ -8,6 +8,7 @@ TagManager:
   - Good
   - Perfact
   - Customer
+  - Detector
   layers:
   - Default
   - TransparentFX
@@ -44,4 +45,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Hitbox
+    uniqueID: 2591242395
+    locked: 0
+  - name: Player
+    uniqueID: 2692957571
+    locked: 0
+  - name: UI
+    uniqueID: 1829293243
     locked: 0

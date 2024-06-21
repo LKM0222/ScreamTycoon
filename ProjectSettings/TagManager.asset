@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Floor
+  - Good
+  - Perfact
+  - Detector
+  - Cool
+  - Customer
   layers:
   - Default
   - TransparentFX
@@ -41,4 +46,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Hitbox
+    uniqueID: 2786462409
+    locked: 0
+  - name: Customer
+    uniqueID: 1486131383
     locked: 0

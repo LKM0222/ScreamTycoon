@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     [Header("Data")]
     public int score;
     public int income;
+    public int evaluate;
 
     [Header("Time")]
     public float time;
@@ -31,6 +32,16 @@ public class GameManager : MonoBehaviour
     private void Start() {
         StartCoroutine(StartTimer());
     }
+
+    #region public method
+    public void NextTurn(){//다음 플레이를 위한 초기화
+        score = 0;
+    }
+
+    public void TurnFinish(){ //턴 클리어 시 분기를 계산하는 부분
+        
+    }
+    #endregion
 
     
     #region Coroutine

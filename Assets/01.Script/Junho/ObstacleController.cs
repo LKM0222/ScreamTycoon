@@ -8,7 +8,7 @@ public class ObstacleController : MonoBehaviour
 
     [SerializeField] GameObject obstacle;
     
-    bool spawnFlag = true; //손님이 스폰되었을때 (나중에 수정필요)
+    [SerializeField] bool spawnFlag = true; //손님이 스폰되었을때 (나중에 수정필요)
  
     // Update is called once per frame
     void Update()
@@ -21,10 +21,10 @@ public class ObstacleController : MonoBehaviour
 
     public IEnumerator HitDetectCoroutine(){
         yield return new WaitUntil(() => hitFlag == true); //플래그를 잘 맞췄다면
-        obstacle.SetActive(hitFlag); //장애물 활성화
+        obstacle.SetActive(!hitFlag); //장애물 활성화
         yield return new WaitForSeconds(1f); //1초 기다린후에
         hitFlag = false;
-        obstacle.SetActive(hitFlag);
+        obstacle.SetActive(!hitFlag);
 
     }
 }

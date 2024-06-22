@@ -28,6 +28,9 @@ public class GameManager : MonoBehaviour
     int minute;
     int second;
     [SerializeField] TMP_Text timeText;
+    private void Start() {
+        StartCoroutine(StartTimer());
+    }
 
     
     #region Coroutine

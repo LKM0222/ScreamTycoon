@@ -1,16 +1,23 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
 
 public class ObstacleController : MonoBehaviour
 {
     public bool hitFlag = false;//노트를 맞췄을 때 true
 
-    [SerializeField] GameObject obstacle;
+    [SerializeField] GameObject obstacle; //프리팹
+    [SerializeField] Transform ObstacleSpawner; //장애물 스포너
     
     [SerializeField] bool spawnFlag = true; //손님이 스폰되었을때 (나중에 수정필요)
- 
+    
+    private void Start() {
+        Instantiate(obstacle, ObstacleSpawner.transform.position,  Quaternion.identity, ObstacleSpawner);
+    }
+
     // Update is called once per frame
     void Update()
     {

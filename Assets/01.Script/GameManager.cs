@@ -33,7 +33,6 @@ public class GameManager : MonoBehaviour
     public int clear_fail;
     public int clear_income;
     public int clear_evalu;
-    public int clear_score;
 
     [Header("Etc")]
     [SerializeField] TMP_Text timeText;
@@ -71,7 +70,7 @@ public class GameManager : MonoBehaviour
 
     public void ReStart(){
         audio.Play();
-        score = 0;
+        score = 0; //스테이지 점수 0으로 초기화
     }
 
     

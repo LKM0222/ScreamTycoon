@@ -14,7 +14,7 @@ public class Obstacles{
 [Serializable]
 public class Obstacle : MonoBehaviour
 {   
-    [SerializeField] ObstacleData obstacle;
+    public ObstacleData obstacle;
     [SerializeField] int obstacleNum;
 
     private void Start() {

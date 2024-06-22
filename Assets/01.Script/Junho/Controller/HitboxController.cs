@@ -20,14 +20,16 @@ public class HitboxController : MonoBehaviour
 
     [SerializeField] KeyCode keyCode;
     [SerializeField] ObstacleController obstacleController;
-    
+    public bool pressKey = true;
     //나중에 초기화할 오브젝트
     GameObject customerObj;
     
     public int hitCount;
     private void Update() {
-        if(Input.GetKeyDown(keyCode)){
+        if(Input.GetKeyDown(keyCode) && pressKey){
             //hitbox에 들어가는 오브젝트가 있을 경우 키를 눌렀을 때 활성화 되야함.
+            // 중복검사 방지해야됨.
+            pressKey = false; //한번 키를 눌렀으면 다시 못누르게
             switch(hitCount){
                 case 2: //perfect
                     obstacleController.hitFlag = true;

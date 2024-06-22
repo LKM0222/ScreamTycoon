@@ -10,24 +10,23 @@ namespace GuestBehave
         [NonSerialized] public float curSpeed = 0f;
         public GuestState curState = GuestState.Idle;
         public Animator animator;
+        private GuestState lastState = GuestState.Idle;
 
         private void Update()
         {
             MoveGuest();
+            CheckState();
+        }
 
-            if (Input.GetKeyUp(KeyCode.B))
+        private void CheckState()
+        {
+            if (curState != lastState)
             {
-                SetIdle();
-            }
-            if (Input.GetKeyUp(KeyCode.N))
-            {
-                SetWalk();
-            }
-            if (Input.GetKeyUp(KeyCode.M))
-            {
-                SetScream();
+                lastState = curState;
+                SetState(curState);
             }
         }
+
 
         public void SetState(GuestState state)
         {

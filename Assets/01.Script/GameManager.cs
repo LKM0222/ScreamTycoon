@@ -33,6 +33,16 @@ public class GameManager : MonoBehaviour
         StartCoroutine(StartTimer());
     }
 
+    #region public method
+    public void NextTurn(){//다음 플레이를 위한 초기화
+        score = 0;
+    }
+
+    public void TurnFinish(){ //턴 클리어 시 분기를 계산하는 부분
+        
+    }
+    #endregion
+
     
     #region Coroutine
     public IEnumerator StartTimer()
@@ -55,5 +65,5 @@ public class GameManager : MonoBehaviour
         }
     }
     #endregion
-
+    
 }

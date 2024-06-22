@@ -17,6 +17,7 @@ public class Hitbox : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.tag == "Detector"){
+            hitboxParent.customerObj = other.transform.parent.gameObject;
             hitboxParent.hitCount += 1;
         }
     }
@@ -24,6 +25,7 @@ public class Hitbox : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other) {
         if(other.tag == "Detector"){
             hitboxParent.hitCount = 0;
+            hitboxParent.customerObj = null;
             hitboxParent.pressKey = true; //빠져나간다면 다시 키 누를수있도록 활성화
         }
     }

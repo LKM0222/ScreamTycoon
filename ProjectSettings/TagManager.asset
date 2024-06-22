@@ -54,9 +54,9 @@ TagManager:
   - name: Hitbox
     uniqueID: 2786462409
     locked: 0
-  - name: Customer
-    uniqueID: 1486131383
-    locked: 0
   - name: Obstacle
     uniqueID: 1227296813
+    locked: 0
+  - name: Customer
+    uniqueID: 1486131383
     locked: 0

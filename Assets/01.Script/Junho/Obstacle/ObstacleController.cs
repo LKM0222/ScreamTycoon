@@ -39,7 +39,9 @@ public class ObstacleController : MonoBehaviour
         }
     }
 
-    public IEnumerator HitDetectCoroutine(){ //Gorani 여기 손님 속도 관련해서 만져줘야해요
+    
+    //Gorani 여기 손님 속도 관련해서 만져줘야해요
+    public IEnumerator HitDetectCoroutine(){ 
         yield return new WaitUntil(() => hitFlag == true); //플래그를 잘 맞췄다면
 
         obstacleobj.GetComponent<SpriteRenderer>().sprite = actionSprite; //장애물 활성화

@@ -61,7 +61,9 @@ public class UIController : MonoBehaviour
     public void OpenFailUI(){
         FailUI.SetActive(true);
     }
-    public void OpenStoreUI(){
+    public void OpenStoreUI(){ //클리어에서 다음 버튼 눌렀을 때
+        GameManager.Instance.evaluate += GameManager.Instance.clear_evalu; //누적 입소문
+        GameManager.Instance.income += GameManager.Instance.clear_income; //누적수익
         StoreUI.SetActive(true);
     }
 
@@ -72,6 +74,6 @@ public class UIController : MonoBehaviour
         clear_failText.text = "Fail-" + GameManager.Instance.clear_fail;
         clear_incomeText.text = $"수익-" + GameManager.Instance.clear_income;
         clear_evaluText.text = "획득입소문-" + GameManager.Instance.clear_evalu;
-        clear_scoreText.text = "획득점수-" + GameManager.Instance.clear_score;
+        clear_scoreText.text = "획득점수-" + GameManager.Instance.score;
     }
 }

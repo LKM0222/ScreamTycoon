@@ -41,7 +41,7 @@
       "fail_score":-500
    },
    {
-      "obstacle_type":"doll",
+      "obstacle_type":"인형 스태프",
       "act_type":"mouse",
       "mouth_condition":30,
       "obstacle_price":100,
@@ -51,7 +51,7 @@
       "fail_score":-300
    },
    {
-      "obstacle_type":"staff",
+      "obstacle_type":"입구 스태프",
       "act_type":"mouse",
       "mouth_condition":50,
       "obstacle_price":500,
@@ -61,7 +61,7 @@
       "fail_score":-1300
    },
    {
-      "obstacle_type":"lost_and_found",
+      "obstacle_type":"분실물 스태프",
       "act_type":"mouse",
       "mouth_condition":50,
       "obstacle_price":700,

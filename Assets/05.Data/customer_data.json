@@ -1,4 +1,4 @@
-[
+{"Items":[
    {
       "customer_type":"couple",
       "customer_speed":4,
@@ -27,4 +27,4 @@
       "bonus_money":300,
       "mouth_value":30
    }
-]
+]}

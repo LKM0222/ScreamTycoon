@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     [Header("Data")]
     public int score;
     public int income;
+    public int evaluate;
 
     [Header("Time")]
     public float time;

@@ -9,10 +9,24 @@ namespace GuestBehave
     {
         [NonSerialized] public float curSpeed = 0f;
         public GuestState curState = GuestState.Idle;
+        public Animator animator;
 
         private void Update()
         {
             MoveGuest();
+
+            if (Input.GetKeyUp(KeyCode.B))
+            {
+                SetIdle();
+            }
+            if (Input.GetKeyUp(KeyCode.N))
+            {
+                SetWalk();
+            }
+            if (Input.GetKeyUp(KeyCode.M))
+            {
+                SetScream();
+            }
         }
 
         public void SetState(GuestState state)
@@ -35,20 +49,25 @@ namespace GuestBehave
         {
             curState = GuestState.Walk;
             //이미지 또는 애니메이션 변경
+            animator.SetInteger("AniNumber", 1);
         }
 
         private void SetIdle()
         {
             curState = GuestState.Idle;
             //이미지 또는 애니메이션 변경
+            animator.SetInteger("AniNumber", 0);
         }
 
-        private void SetScream()
+        private void SetScream(float duration = 2f)
         {
             curState = GuestState.Scream;
             //이미지 또는 애니메이션 변경
+            animator.SetInteger("AniNumber", 2);
             //애니메이션 길이만큼 대기 후 Walk로 변경
+            Invoke("SetWalk", duration);
         }
+
 
         private void MoveGuest()
         {

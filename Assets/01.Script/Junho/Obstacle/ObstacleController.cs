@@ -27,6 +27,7 @@ public class ObstacleController : MonoBehaviour
 
     
     [SerializeField] bool spawnFlag = true; //손님이 스폰되었을때 (나중에 수정필요)
+    [SerializeField] HitboxController hitbodcontroller;
     
 
     // Update is called once per frame
@@ -38,12 +39,16 @@ public class ObstacleController : MonoBehaviour
         }
     }
 
-    public IEnumerator HitDetectCoroutine(){
+    public IEnumerator HitDetectCoroutine(){ //Gorani 여기 손님 속도 관련해서 만져줘야해요
         yield return new WaitUntil(() => hitFlag == true); //플래그를 잘 맞췄다면
+
         obstacleobj.GetComponent<SpriteRenderer>().sprite = actionSprite; //장애물 활성화
-        //손님 잠시 멈춤 (상태변경)
-        yield return new WaitForSeconds(1f); //1초 기다린후에
+        var temp = hitbodcontroller.customerObj.GetComponent<TestMoving>().speed; //원래 속도 저장
+        hitbodcontroller.customerObj.GetComponent<TestMoving>().speed = 0f;//손님 잠시 멈춤 (상태변경)
+
+        yield return new WaitForSeconds(1f); //1초 기다린후에 전부 복구
         obstacleobj.GetComponent<SpriteRenderer>().sprite = idleSprite;
+        hitbodcontroller.customerObj.GetComponent<TestMoving>().speed = temp;
         hitFlag = false;
         obstacleobj.gameObject.SetActive(!hitFlag);
 

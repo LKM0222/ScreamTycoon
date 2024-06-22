@@ -1,0 +1,30 @@
+[
+   {
+      "customer_type":"couple",
+      "customer_speed":4,
+      "bonus_score":500,
+      "bonus_money":1000,
+      "mouth_value":10
+   },
+   {
+      "customer_type":"girl",
+      "customer_speed":3,
+      "bonus_score":300,
+      "bonus_money":300,
+      "mouth_value":5
+   },
+   {
+      "customer_type":"strong_male",
+      "customer_speed":4,
+      "bonus_score":1000,
+      "bonus_money":800,
+      "mouth_value":5
+   },
+   {
+      "customer_type":"streamer",
+      "customer_speed":4,
+      "bonus_score":1000,
+      "bonus_money":300,
+      "mouth_value":30
+   }
+]

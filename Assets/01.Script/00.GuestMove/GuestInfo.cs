@@ -46,21 +46,21 @@ namespace GuestBehave
 
         private void SetWalk()
         {
-            curState = GuestState.Walk;
+            //curState = GuestState.Walk;
             //이미지 또는 애니메이션 변경
             animator.SetInteger("AniNumber", 1);
         }
 
         private void SetIdle()
         {
-            curState = GuestState.Idle;
+            //curState = GuestState.Idle;
             //이미지 또는 애니메이션 변경
             animator.SetInteger("AniNumber", 0);
         }
 
         private void SetScream(float duration = 2f)
         {
-            curState = GuestState.Scream;
+            //curState = GuestState.Scream;
             //이미지 또는 애니메이션 변경
             animator.SetInteger("AniNumber", 2);
             //애니메이션 길이만큼 대기 후 Walk로 변경

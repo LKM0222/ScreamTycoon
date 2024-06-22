@@ -10,6 +10,7 @@ TagManager:
   - Detector
   - Cool
   - Customer
+  - Endline
   layers:
   - Default
   - TransparentFX

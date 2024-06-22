@@ -29,14 +29,17 @@ public class HitboxController : MonoBehaviour
             switch(hitCount){
                 case 3: //perfect
                     obstacleController.hitFlag = true;
+                    GameManager.Instance.score += 100;
                     print("perfect!" + keyCode);
                 break;
                 case 2: //Good
                     obstacleController.hitFlag = true;
+                    GameManager.Instance.score += 50;
                     print("good!" + keyCode);
                 break;
                 case 1: //Cool
                     obstacleController.hitFlag = true;
+                    GameManager.Instance.score += 30;
                     print("cool!" + keyCode);
                 break;
                 default: //bad

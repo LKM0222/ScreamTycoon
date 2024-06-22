@@ -26,20 +26,31 @@ public class GameManager : MonoBehaviour
     public float time;
     public float curTime;
 
+
+
     int minute;
     int second;
     [SerializeField] TMP_Text timeText;
+
+    [SerializeField] AudioSource audio;
+
     private void Start() {
         StartCoroutine(StartTimer());
     }
 
     #region public method
-    public void NextTurn(){//다음 플레이를 위한 초기화
-        score = 0;
+    public void TurnFinish(){ //턴 클리어 시 분기를 계산하는 부분
+        if(score < DataManager.Instance.level[0]){
+            UIController.Instance.OpenFailUI();
+        }
+        else{
+            UIController.Instance.OpenClearUI();
+        }
     }
 
-    public void TurnFinish(){ //턴 클리어 시 분기를 계산하는 부분
-        
+    public void ReStart(){
+        audio.Play();
+        score = 0;
     }
     #endregion
 
@@ -59,6 +70,7 @@ public class GameManager : MonoBehaviour
             if(curTime <= 0)
             {
                 Debug.Log("시간 종료");
+                TurnFinish();
                 curTime = 0;
                 yield break;
             }

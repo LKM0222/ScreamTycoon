@@ -119,6 +119,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ccacd6e97beff74daadcf8b633f144a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  curState: 0
+  animator: {fileID: 0}
 --- !u!1 &2175894323109614453
 GameObject:
   m_ObjectHideFlags: 0
@@ -129,6 +131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1519716970078591721}
   - component: {fileID: 6644722787421428643}
+  - component: {fileID: 3321715555970302338}
   m_Layer: 0
   m_Name: GuestSprite
   m_TagString: Untagged
@@ -203,3 +206,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &3321715555970302338
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2175894323109614453}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 67ea2bb0a5fd31e4f80c21424d399c91, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

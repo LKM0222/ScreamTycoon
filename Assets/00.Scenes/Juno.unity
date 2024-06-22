@@ -352,7 +352,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitFlag: 0
-  obstacle: {fileID: 355164010}
+  objNum: 1
+  obstacleobj: {fileID: 0}
   spawnFlag: 1
 --- !u!1 &37491451
 GameObject:
@@ -610,7 +611,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitFlag: 0
-  obstacle: {fileID: 151995112}
+  objNum: 3
+  obstacleobj: {fileID: 0}
   spawnFlag: 1
 --- !u!1 &66144435
 GameObject:
@@ -988,6 +990,7 @@ GameObject:
   m_Component:
   - component: {fileID: 151995113}
   - component: {fileID: 151995114}
+  - component: {fileID: 151995115}
   m_Layer: 0
   m_Name: Object
   m_TagString: Untagged
@@ -1062,6 +1065,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &151995115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151995112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d09a948cd13a0f4782ef1e791afa693, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacle:
+    obstacle_type: 
+    act_type: 
+    mouth_condition: 0
+    obstacle_price: 0
+    maintenance_cost: 0
+    perfect_score: 0
+    good_score: 0
+    fail_score: 0
+    obstacleImg: {fileID: 0}
+  obstacleNum: 0
 --- !u!1 &154655943
 GameObject:
   m_ObjectHideFlags: 0
@@ -2504,6 +2530,7 @@ GameObject:
   m_Component:
   - component: {fileID: 355164011}
   - component: {fileID: 355164012}
+  - component: {fileID: 355164013}
   m_Layer: 0
   m_Name: Object
   m_TagString: Untagged
@@ -2578,6 +2605,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &355164013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 355164010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d09a948cd13a0f4782ef1e791afa693, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacle:
+    obstacle_type: 
+    act_type: 
+    mouth_condition: 0
+    obstacle_price: 0
+    maintenance_cost: 0
+    perfect_score: 0
+    good_score: 0
+    fail_score: 0
+    obstacleImg: {fileID: 0}
+  obstacleNum: 0
 --- !u!1 &376968473
 GameObject:
   m_ObjectHideFlags: 0
@@ -4183,6 +4233,13 @@ MonoBehaviour:
   ClearUI: {fileID: 743057609}
   FailUI: {fileID: 1925769759}
   StoreUI: {fileID: 562682648}
+  clear_customerText: {fileID: 0}
+  clear_perfectText: {fileID: 0}
+  clear_nearText: {fileID: 0}
+  clear_failText: {fileID: 0}
+  clear_incomeText: {fileID: 0}
+  clear_evaluText: {fileID: 0}
+  clear_scoreText: {fileID: 0}
 --- !u!4 &619926903
 Transform:
   m_ObjectHideFlags: 0
@@ -4462,8 +4519,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e20fe940d867da24bbb1251f10275dc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  obstacle:
+    obstacle_type: 
+    act_type: 
+    mouth_condition: 0
+    obstacle_price: 0
+    maintenance_cost: 0
+    perfect_score: 0
+    good_score: 0
+    fail_score: 0
+    obstacleImg: {fileID: 0}
   itemImg: {fileID: 752318471}
   itemEvalu: {fileID: 1967890763}
+  itemName: {fileID: 0}
+  itemTooltip: {fileID: 0}
   itemValue: {fileID: 517894178}
   itemButBtn: {fileID: 1655996314}
   needEvalu: 0
@@ -4590,6 +4659,7 @@ GameObject:
   m_Component:
   - component: {fileID: 724978077}
   - component: {fileID: 724978078}
+  - component: {fileID: 724978079}
   m_Layer: 0
   m_Name: Object
   m_TagString: Untagged
@@ -4664,6 +4734,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &724978079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724978076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d09a948cd13a0f4782ef1e791afa693, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacle:
+    obstacle_type: 
+    act_type: 
+    mouth_condition: 0
+    obstacle_price: 0
+    maintenance_cost: 0
+    perfect_score: 0
+    good_score: 0
+    fail_score: 0
+    obstacleImg: {fileID: 0}
+  obstacleNum: 0
 --- !u!1 &743057609
 GameObject:
   m_ObjectHideFlags: 0
@@ -7446,8 +7539,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e20fe940d867da24bbb1251f10275dc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  obstacle:
+    obstacle_type: 
+    act_type: 
+    mouth_condition: 0
+    obstacle_price: 0
+    maintenance_cost: 0
+    perfect_score: 0
+    good_score: 0
+    fail_score: 0
+    obstacleImg: {fileID: 0}
   itemImg: {fileID: 529866965}
   itemEvalu: {fileID: 2072409308}
+  itemName: {fileID: 0}
+  itemTooltip: {fileID: 0}
   itemValue: {fileID: 1930732145}
   itemButBtn: {fileID: 1148361008}
   needEvalu: 0
@@ -7796,6 +7901,13 @@ MonoBehaviour:
   evaluate: 0
   time: 10
   curTime: 0
+  clear_customer: 0
+  clear_perfect: 0
+  clear_near: 0
+  clear_fail: 0
+  clear_income: 0
+  clear_evalu: 0
+  clear_score: 0
   timeText: {fileID: 944995037}
   audio: {fileID: 1001049741}
 --- !u!4 &1390238580
@@ -7833,6 +7945,7 @@ MonoBehaviour:
   - {fileID: 8538997789974031881, guid: 3d5970b53d629144194cc1fdfe58d835, type: 3}
   - {fileID: 8538997789974031881, guid: 22c13a6e4b2781c4a95dc6ac2fb109c0, type: 3}
   - {fileID: 8538997789974031881, guid: 03fbd33bf9bd666449dbb3e970396715, type: 3}
+  obstacles: []
 --- !u!1 &1411219745
 GameObject:
   m_ObjectHideFlags: 0
@@ -8457,6 +8570,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1536103457}
   - component: {fileID: 1536103458}
+  - component: {fileID: 1536103459}
   m_Layer: 0
   m_Name: Object
   m_TagString: Untagged
@@ -8531,6 +8645,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1536103459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536103456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d09a948cd13a0f4782ef1e791afa693, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacle:
+    obstacle_type: 
+    act_type: 
+    mouth_condition: 0
+    obstacle_price: 0
+    maintenance_cost: 0
+    perfect_score: 0
+    good_score: 0
+    fail_score: 0
+    obstacleImg: {fileID: 0}
+  obstacleNum: 0
 --- !u!1 &1561624623
 GameObject:
   m_ObjectHideFlags: 0
@@ -9644,7 +9781,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitFlag: 0
-  obstacle: {fileID: 1536103456}
+  objNum: 2
+  obstacleobj: {fileID: 0}
   spawnFlag: 1
 --- !u!1 &1844123954
 GameObject:
@@ -11503,8 +11641,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e20fe940d867da24bbb1251f10275dc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  obstacle:
+    obstacle_type: 
+    act_type: 
+    mouth_condition: 0
+    obstacle_price: 0
+    maintenance_cost: 0
+    perfect_score: 0
+    good_score: 0
+    fail_score: 0
+    obstacleImg: {fileID: 0}
   itemImg: {fileID: 831840684}
   itemEvalu: {fileID: 830082273}
+  itemName: {fileID: 0}
+  itemTooltip: {fileID: 0}
   itemValue: {fileID: 1057314625}
   itemButBtn: {fileID: 1411219747}
   needEvalu: 0
@@ -11593,7 +11743,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitFlag: 0
-  obstacle: {fileID: 724978076}
+  objNum: 0
+  obstacleobj: {fileID: 0}
   spawnFlag: 1
 --- !u!1 &2133390015
 GameObject:

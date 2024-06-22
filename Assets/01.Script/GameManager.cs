@@ -51,7 +51,6 @@ public class GameManager : MonoBehaviour
     #region LifeCycle
     private void Start() {
         StartCoroutine(StartTimer());
-        DataManager.Instance.ParsingObstacleData();
     }
     #endregion
 

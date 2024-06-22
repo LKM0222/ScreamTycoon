@@ -9,7 +9,7 @@ using System;
 [Serializable]
 public class ShopItem : MonoBehaviour
 {   
-    [SerializeField] Obstacle obstacle; //기물
+    [SerializeField] ObstacleData obstacle; //기물
     //UI
     [SerializeField] Image itemImg; //아이템 이미지
     [SerializeField] TMP_Text itemEvalu; //요구 입소문

@@ -1,53 +1,37 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DataManager : MonoBehaviour
 {
-    //게임 내 레벨 디자인, 상품 가격, 손님 특성 등등 파싱하는 스크립트
-    #region Singleon
-    private static DataManager _intance;
-    public static DataManager Instance
-    {
-        get
-        {
-            if (_intance == null)
-                _intance = FindObjectOfType(typeof(DataManager)) as DataManager;
 
-            return _intance;
+    #region Singletone
+    private static DataManager _instance;
+    public static DataManager Instance{
+        get{
+            if(_instance == null)
+                _instance = FindObjectOfType(typeof(DataManager)) as DataManager;
+            
+            return _instance;
         }
     }
     #endregion
-
-    [Header("TextAssets")]
-    public TextAsset obstacle_json;
-
+    //게임 내 레벨 디자인, 상품 가격, 손님 특성 등등 파싱하는 스크립트
+    
 
     [Header("Data")]
     public int[] level = new int[0]; //스테이지 레벨
     public TextAsset jsonCustomer;
     public TextAsset jsonObstacle;
-    public List<Obstacle> obstaclelist;
-
-    #region public Method
-    public void ParsingObstacleData(){
-        Obstacles obstacles = JsonUtility.FromJson<Obstacles>(obstacle_json.text);
-
-        foreach(Obstacle item in obstacles.root){
-            obstaclelist.Add(item);
-        }
-    }
-
-        
-
-    #endregion
-    
 
     public List<GameObject> customerPrefabs;
 
     private List<CustomerData> customers;
-    private List<ObstacleData> obstacles;
+    [SerializeField] List<ObstacleData> obstacles;
+
 
     private void Awake()
     {
@@ -62,10 +46,14 @@ public class DataManager : MonoBehaviour
         foreach (var customer in customers)
         {
             var temp = customerPrefabs[i].GetComponent<TestMoving>();
-            // temp.speed = customer.customer_speed;
+            temp.speed = customer.customer_speed;
             i++;
         }
     }
+    public ObstacleData GetObstacle(int obstaclenum){
+        return obstacles[obstaclenum];
+    }
+
 
     private List<CustomerData> LoadJsonCustomers(TextAsset json)
     {
@@ -116,5 +104,8 @@ public class ObstacleData
     public int maintenance_cost;
     public int perfect_score;
     public int good_score;
-    public int fail_score;
+    public int fail_score; 
+    
+    //etc
+    public Sprite obstacleImg;
 }

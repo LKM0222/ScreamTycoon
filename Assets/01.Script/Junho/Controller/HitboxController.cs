@@ -32,7 +32,7 @@ public class HitboxController : MonoBehaviour
                 case 2: //perfect
                     obstacleController.hitFlag = true;
                     GameManager.Instance.clear_score += 
-                        ObstacleController.Instance.obstacleobj.GetComponent<Obstacle>().perfect_score; //오브젝트별 점수, 등등 다 받아야됨.
+                        ObstacleController.Instance.obstacleobj.GetComponent<ObstacleData>().perfect_score; //오브젝트별 점수, 등등 다 받아야됨.
                     GameManager.Instance.clear_evalu += 5;
                     GameManager.Instance.clear_income += 100;
 
@@ -43,7 +43,7 @@ public class HitboxController : MonoBehaviour
                 case 1: //Near
                     obstacleController.hitFlag = true;
                     GameManager.Instance.clear_score += 
-                        ObstacleController.Instance.obstacleobj.GetComponent<Obstacle>().good_score; //오브젝트별 점수, 등등 다 받아야됨.
+                        ObstacleController.Instance.obstacleobj.GetComponent<ObstacleData>().good_score; //오브젝트별 점수, 등등 다 받아야됨.
                     GameManager.Instance.clear_evalu += 5; //이건 손님 데이터 와야 불러올듯.
                     GameManager.Instance.clear_income += 100;
 
@@ -54,7 +54,7 @@ public class HitboxController : MonoBehaviour
                 default: //bad
                     //bad일때는 어떤 작업 할지 작성
                     GameManager.Instance.clear_score += 
-                        ObstacleController.Instance.obstacleobj.GetComponent<Obstacle>().fail_score; //오브젝트별 점수, 등등 다 받아야됨.
+                        ObstacleController.Instance.obstacleobj.GetComponent<ObstacleData>().fail_score; //오브젝트별 점수, 등등 다 받아야됨.
                     
                     GameManager.Instance.clear_fail += 1;
                     print("bad.." + keyCode);

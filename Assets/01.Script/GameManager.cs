@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -8,11 +9,13 @@ public class GameManager : MonoBehaviour
 {
     #region Singletone
     private static GameManager _instance;
-    public static GameManager Instance{
-        get{
-            if(_instance == null)
+    public static GameManager Instance
+    {
+        get
+        {
+            if (_instance == null)
                 _instance = FindObjectOfType(typeof(GameManager)) as GameManager;
-            
+
             return _instance;
         }
     }
@@ -43,47 +46,54 @@ public class GameManager : MonoBehaviour
     public bool enterStaff; //입구스태프
     public bool lostStaff; //분실물 스태프
 
+    //New Spawn Guest Action
+    public Action NewSpawnAction;
 
     #region Time
     int minute;
     int second;
     #endregion
-    
+
 
 
 
     #region LifeCycle
-    private void Start() {
+    private void Start()
+    {
         StartCoroutine(StartTimer()); //제일 처음 실행할때 타이머
     }
 
     #endregion
 
     #region public method
-    public void TurnFinish(){ //턴 클리어 시 분기를 계산하는 부분
-        if(score < DataManager.Instance.level[0]){
+    public void TurnFinish()
+    { //턴 클리어 시 분기를 계산하는 부분
+        if (score < DataManager.Instance.level[0])
+        {
             UIController.Instance.OpenFailUI();
         }
-        else{
+        else
+        {
             UIController.Instance.OpenClearUI();
         }
     }
 
-    public void ReStart(){
+    public void ReStart()
+    {
         audio.Play();
         score = 0; //스테이지 점수 0으로 초기화
         StartCoroutine(StartTimer()); //타이머 활성화
     }
 
-    
+
     #endregion
 
-    
+
     #region Coroutine
     public IEnumerator StartTimer()
     {
         curTime = time;
-        while(curTime > 0)
+        while (curTime > 0)
         {
             curTime -= Time.deltaTime;
             minute = (int)curTime / 60;
@@ -91,7 +101,7 @@ public class GameManager : MonoBehaviour
             timeText.text = minute.ToString("00") + ":" + second.ToString("00");
             yield return null;
 
-            if(curTime <= 0)
+            if (curTime <= 0)
             {
                 Debug.Log("시간 종료");
                 TurnFinish();

@@ -10,17 +10,19 @@ public class DataManager : MonoBehaviour
 
     #region Singletone
     private static DataManager _instance;
-    public static DataManager Instance{
-        get{
-            if(_instance == null)
+    public static DataManager Instance
+    {
+        get
+        {
+            if (_instance == null)
                 _instance = FindObjectOfType(typeof(DataManager)) as DataManager;
-            
+
             return _instance;
         }
     }
     #endregion
     //게임 내 레벨 디자인, 상품 가격, 손님 특성 등등 파싱하는 스크립트
-    
+
 
     [Header("Data")]
     public int[] level = new int[0]; //스테이지 레벨
@@ -29,7 +31,7 @@ public class DataManager : MonoBehaviour
 
     public List<GameObject> customerPrefabs;
 
-    private List<CustomerData> customers;
+    public List<CustomerData> customers;
     [SerializeField] List<ObstacleData> obstacles;
 
 
@@ -39,6 +41,31 @@ public class DataManager : MonoBehaviour
         obstacles = LoadJsonObstacles(jsonObstacle);
         SetCustomer();
     }
+    public CustomerData GetCustomerData(TestMoving info)
+    {
+        if (info == null)
+            return null;
+
+        CustomerData data = null;
+        var temp = info;
+        switch (temp.guestType)
+        {
+            case GuestType.Couple:
+                data = DataManager.Instance.customers.Find(x => x.customer_type == "couple");
+                break;
+            case GuestType.LittleGirl:
+                data = DataManager.Instance.customers.Find(x => x.customer_type == "girl");
+                break;
+            case GuestType.Muscle:
+                data = DataManager.Instance.customers.Find(x => x.customer_type == "strong_male");
+                break;
+            case GuestType.Streamer:
+                data = DataManager.Instance.customers.Find(x => x.customer_type == "streamer");
+                break;
+        }
+        return data;
+    }
+
 
     private void SetCustomer()
     {
@@ -50,7 +77,8 @@ public class DataManager : MonoBehaviour
             i++;
         }
     }
-    public ObstacleData GetObstacle(int obstaclenum){
+    public ObstacleData GetObstacle(int obstaclenum)
+    {
         return obstacles[obstaclenum];
     }
 
@@ -104,8 +132,8 @@ public class ObstacleData
     public int maintenance_cost;
     public int perfect_score;
     public int good_score;
-    public int fail_score; 
-    
+    public int fail_score;
+
     //etc
     public Sprite obstacleImg;
 }

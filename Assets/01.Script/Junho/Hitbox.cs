@@ -6,7 +6,6 @@ using UnityEngine;
 public class Hitbox : MonoBehaviour
 {
     public float length;
-
     [SerializeField] HitboxController hitboxParent;
 
     // Update is called once per frame

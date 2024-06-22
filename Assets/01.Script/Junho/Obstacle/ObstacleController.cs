@@ -9,9 +9,11 @@ public class ObstacleController : MonoBehaviour
 {
     #region Singleton
     private static ObstacleController _instance;
-    public static ObstacleController Instance{
-        get{
-            if(_instance == null)
+    public static ObstacleController Instance
+    {
+        get
+        {
+            if (_instance == null)
                 _instance = FindObjectOfType(typeof(ObstacleController)) as ObstacleController;
 
             return _instance;
@@ -25,32 +27,48 @@ public class ObstacleController : MonoBehaviour
     [SerializeField] Sprite actionSprite; //액션 시 전환할 이미지
     [SerializeField] Sprite idleSprite; //기본 이미지
 
-    
     [SerializeField] bool spawnFlag = true; //손님이 스폰되었을때 (나중에 수정필요)
     [SerializeField] HitboxController hitbodcontroller;
-    
+    private Coroutine coroutine;
+
+    private void Start()
+    {
+        GameManager.Instance.NewSpawnAction -= ResetFlag;
+        GameManager.Instance.NewSpawnAction += ResetFlag;
+    }
+
+    private void ResetFlag()
+    {
+        spawnFlag = true;
+    }
 
     // Update is called once per frame
     void Update()
     {
-        if(spawnFlag){
-            StartCoroutine(HitDetectCoroutine());
+        if (spawnFlag)
+        {
+            if (coroutine != null)
+                StopCoroutine(coroutine);
+            coroutine = StartCoroutine(HitDetectCoroutine());
             spawnFlag = false;
         }
     }
 
-    
-    //Gorani 여기 손님 속도 관련해서 만져줘야해요
-    public IEnumerator HitDetectCoroutine(){ 
+   
+    public IEnumerator HitDetectCoroutine()
+    {
         yield return new WaitUntil(() => hitFlag == true); //플래그를 잘 맞췄다면
 
         obstacleobj.GetComponent<SpriteRenderer>().sprite = actionSprite; //장애물 활성화
-        var temp = hitbodcontroller.customerObj.GetComponent<TestMoving>().speed; //원래 속도 저장
-        hitbodcontroller.customerObj.GetComponent<TestMoving>().speed = 0f;//손님 잠시 멈춤 (상태변경)
+        var testMoving = hitbodcontroller.customerObj.GetComponent<TestMoving>();
+        var temp = testMoving.speed; //원래 속도 저장
+        testMoving.speed = 0f;//손님 잠시 멈춤 (상태변경)
+        testMoving.animator.SetInteger("AniNumber", 2);
 
         yield return new WaitForSeconds(1f); //1초 기다린후에 전부 복구
         obstacleobj.GetComponent<SpriteRenderer>().sprite = idleSprite;
         hitbodcontroller.customerObj.GetComponent<TestMoving>().speed = temp;
+        testMoving.animator.SetInteger("AniNumber", 1);
         hitFlag = false;
         obstacleobj.gameObject.SetActive(!hitFlag);
 

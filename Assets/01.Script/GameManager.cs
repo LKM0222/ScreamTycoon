@@ -103,3 +103,4 @@ public class GameManager : MonoBehaviour
     #endregion
 
 }
+//충돌해결

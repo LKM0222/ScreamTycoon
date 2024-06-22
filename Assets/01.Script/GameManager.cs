@@ -26,18 +26,34 @@ public class GameManager : MonoBehaviour
     public float time;
     public float curTime;
 
+    [Header("Clear")]
+    public int clear_customer;
+    public int clear_perfect;
+    public int clear_near;
+    public int clear_fail;
+    public int clear_income;
+    public int clear_evalu;
+    public int clear_score;
 
-
-    int minute;
-    int second;
+    [Header("Etc")]
     [SerializeField] TMP_Text timeText;
-
     [SerializeField] AudioSource audio;
 
+
+    #region Time
+    int minute;
+    int second;
+    #endregion
+    
+
+
+
+    #region LifeCycle
     private void Start() {
         StartCoroutine(StartTimer());
         DataManager.Instance.ParsingObstacleData();
     }
+    #endregion
 
     #region public method
     public void TurnFinish(){ //턴 클리어 시 분기를 계산하는 부분
@@ -53,6 +69,8 @@ public class GameManager : MonoBehaviour
         audio.Play();
         score = 0;
     }
+
+    
     #endregion
 
     

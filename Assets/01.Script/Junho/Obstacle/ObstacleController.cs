@@ -7,15 +7,27 @@ using UnityEngine;
 
 public class ObstacleController : MonoBehaviour
 {
+    #region Singleton
+    private static ObstacleController _instance;
+    public static ObstacleController Instance{
+        get{
+            if(_instance == null)
+                _instance = FindObjectOfType(typeof(ObstacleController)) as ObstacleController;
+
+            return _instance;
+        }
+    }
+    #endregion
     public bool hitFlag = false;//노트를 맞췄을 때 true
 
     [SerializeField] GameObject obstacle; //프리팹
     [SerializeField] Transform ObstacleSpawner; //장애물 스포너
+    public GameObject obstacleobj;
     
     [SerializeField] bool spawnFlag = true; //손님이 스폰되었을때 (나중에 수정필요)
     
     private void Start() {
-        Instantiate(obstacle, ObstacleSpawner.transform.position,  Quaternion.identity, ObstacleSpawner);
+       obstacleobj = Instantiate(obstacle, ObstacleSpawner.transform.position,  Quaternion.identity, ObstacleSpawner);
     }
 
     // Update is called once per frame

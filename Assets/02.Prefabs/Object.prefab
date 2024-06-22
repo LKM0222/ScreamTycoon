@@ -102,6 +102,7 @@ MonoBehaviour:
   mouse_condition: 0
   obstacle_price: 0
   maintenance_cost: 0
-  perfect_score: 0
-  good_score: 0
-  fail_score: 0
+  perfect_score: 3
+  good_score: 1
+  fail_score: -1
+  obstacleImg: {fileID: 0}

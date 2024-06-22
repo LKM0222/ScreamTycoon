@@ -39,6 +39,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] TMP_Text timeText;
     [SerializeField] AudioSource audio;
 
+    [Header("Staff Flag")]
+    public bool dollStaff; //인형스태프
+    public bool enterStaff; //입구스태프
+    public bool lostStaff; //분실물 스태프
+
 
     #region Time
     int minute;

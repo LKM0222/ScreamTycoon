@@ -7826,6 +7826,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0a000000d0070000b80b0000
+  jsonCustomer: {fileID: 4900000, guid: 30d536573e3690842ba3dfab11a919c9, type: 3}
+  jsonObstacle: {fileID: 4900000, guid: a563cc24d1c815f42963287bbe942a9b, type: 3}
+  customerPrefabs:
+  - {fileID: 8538997789974031881, guid: 100b97c5ace51294fae2fca32a580f54, type: 3}
+  - {fileID: 8538997789974031881, guid: 3d5970b53d629144194cc1fdfe58d835, type: 3}
+  - {fileID: 8538997789974031881, guid: 22c13a6e4b2781c4a95dc6ac2fb109c0, type: 3}
+  - {fileID: 8538997789974031881, guid: 03fbd33bf9bd666449dbb3e970396715, type: 3}
 --- !u!1 &1411219745
 GameObject:
   m_ObjectHideFlags: 0
@@ -11014,7 +11021,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f08ea158c9f96c48a1ec2b9f387d522, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  customerPrefab: {fileID: 8538997789974031881, guid: 57b07114d5433c04bacd91264723d9fb, type: 3}
 --- !u!1 &2004431656
 GameObject:
   m_ObjectHideFlags: 0
@@ -11987,6 +11993,10 @@ PrefabInstance:
     - target: {fileID: 8538997789974031881, guid: 57b07114d5433c04bacd91264723d9fb, type: 3}
       propertyPath: m_Name
       value: Square
+      objectReference: {fileID: 0}
+    - target: {fileID: 8538997789974031881, guid: 57b07114d5433c04bacd91264723d9fb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

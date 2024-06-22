@@ -4,20 +4,22 @@ using UnityEngine;
 
 public class TestMoving : MonoBehaviour
 {
-    [SerializeField] float speed;
+    public float speed;
     bool targetClicked;
     // Update is called once per frame
     void Update()
     {
-        if(targetClicked)
+        if (targetClicked)
             this.gameObject.transform.position += new Vector3(speed * Time.deltaTime, 0f, 0f);
     }
 
-    private void OnMouseDown() {
+    private void OnMouseDown()
+    {
         targetClicked = true;
     }
 
-    private void OnBecameInvisible() {
+    private void OnBecameInvisible()
+    {
         Destroy(this.gameObject);
     }
 }

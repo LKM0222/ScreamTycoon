@@ -1,3 +1,4 @@
+{"Items":
 [
    {
       "obstacle_type":"devil",
@@ -69,4 +70,4 @@
       "good_score":1000,
       "fail_score":-1000
    }
-]
+]}

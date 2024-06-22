@@ -7,65 +7,66 @@ namespace GuestBehave
 {
     public class GuestInfo : MonoBehaviour
     {
-        //public float speed;
         [NonSerialized] public float curSpeed = 0f;
-        //private bool isOnBehave = false;
-
+        public GuestState curState = GuestState.Idle;
 
         private void Update()
         {
             MoveGuest();
         }
 
-        private void MoveGuest()
+        public void SetState(GuestState state)
         {
-            Vector3 newPosition = transform.position;
-            newPosition.x += curSpeed * Time.deltaTime;
-
-            transform.position = newPosition;
+            switch (state)
+            {
+                case GuestState.Idle:
+                    SetIdle();
+                    break;
+                case GuestState.Walk:
+                    SetWalk();
+                    break;
+                case GuestState.Scream:
+                    SetScream();
+                    break;
+            }
         }
 
-        //private void ActionReturn()
-        //{
-        //    curSpeed *= -1f;
-        //}
+        private void SetWalk()
+        {
+            curState = GuestState.Walk;
+            //이미지 또는 애니메이션 변경
+        }
 
-        //private void ActionSlow()
-        //{
-        //    curSpeed *= .5f;
-        //}
+        private void SetIdle()
+        {
+            curState = GuestState.Idle;
+            //이미지 또는 애니메이션 변경
+        }
 
+        private void SetScream()
+        {
+            curState = GuestState.Scream;
+            //이미지 또는 애니메이션 변경
+            //애니메이션 길이만큼 대기 후 Walk로 변경
+        }
 
-        //private void OnTriggerEnter2D(Collider2D collision)
-        //{
-        //    if (collision.gameObject.CompareTag("GameController"))
-        //    {
-        //        if (isOnBehave == false)
-        //        {
-        //            isOnBehave = true;
-        //            var temp = collision.gameObject.GetComponent<BehavePoint>();
+        private void MoveGuest()
+        {
+            if (curState == GuestState.Walk)
+            {
+                Vector3 newPosition = transform.position;
+                newPosition.x += curSpeed * Time.deltaTime;
 
-        //            switch (temp.behaveType)
-        //            {
-        //                case BehaveType.Return:
-        //                default:
-        //                    ActionReturn();
-        //                    return;
-        //                case BehaveType.Slow:
-        //                    ActionSlow();
-        //                    return;
+                transform.position = newPosition;
+            }
+        }
 
-        //            }
-        //        }
-        //    }
-        //}
-
-        //private void OnTriggerExit2D(Collider2D collision)
-        //{
-        //    if (collision.gameObject.CompareTag("GameController"))
-        //    {
-        //        isOnBehave = false;
-        //    }
-        //}
+        public enum GuestState
+        {
+            Idle,
+            Walk,
+            Scream,
+        }
     }
 }
+

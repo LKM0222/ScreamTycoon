@@ -20,9 +20,29 @@ public class DataManager : MonoBehaviour
     }
     #endregion
 
+    [Header("TextAssets")]
+    public TextAsset obstacle_json;
+
+
+    [Header("Data")]
     public int[] level = new int[0]; //스테이지 레벨
     public TextAsset jsonCustomer;
     public TextAsset jsonObstacle;
+    public List<Obstacle> obstaclelist;
+
+    #region public Method
+    public void ParsingObstacleData(){
+        Obstacles obstacles = JsonUtility.FromJson<Obstacles>(obstacle_json.text);
+
+        foreach(Obstacle item in obstacles.root){
+            obstaclelist.Add(item);
+        }
+    }
+
+        
+
+    #endregion
+    
 
     public List<GameObject> customerPrefabs;
 
@@ -42,7 +62,7 @@ public class DataManager : MonoBehaviour
         foreach (var customer in customers)
         {
             var temp = customerPrefabs[i].GetComponent<TestMoving>();
-            temp.speed = customer.customer_speed;
+            // temp.speed = customer.customer_speed;
             i++;
         }
     }

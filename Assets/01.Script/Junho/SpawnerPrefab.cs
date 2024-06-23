@@ -24,13 +24,14 @@ public class SpawnerPrefab : MonoBehaviour
             curNumber = 0;
             _prefab = customerPrefab[curNumber];
             curNumber++;
-        }//prefab ListÀÇ ¼ø¼­´ë·Î ¼±ÅÃ
+        }//prefab Listï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
         GameObject go = Instantiate(_prefab, this.transform);
         var temp = go.GetComponent<TestMoving>();
         var data = DataManager.Instance.GetCustomerData(temp);
-        temp.speed = data.customer_speed;  //Gorani ¿©±â¼­ ¼Õ´Ô ¼Óµµ ÃÊ±âÈ­Çß¾î¿ä
-
+        temp.speed = data.customer_speed;  //Gorani ï¿½ï¿½ï¿½â¼­ ï¿½Õ´ï¿½ ï¿½Óµï¿½ ï¿½Ê±ï¿½È­ï¿½ß¾ï¿½ï¿½
+        
+        GameManager.Instance.clear_customer += 1; //ì¼ë‹¨ í•œëª… ìƒì„±ë ë•Œë§ˆë‹¤ ë°©ë¬¸ìˆ˜1ì¦ê°€
     }
 
 }

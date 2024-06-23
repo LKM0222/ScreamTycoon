@@ -6,14 +6,10 @@ using UnityEngine.SceneManagement;
 public class TitleScene : MonoBehaviour
 {
     public void GameStart(){
-        SceneManager.LoadScene("");
-    }
-
-    public void Credit(){
-            
+        SceneManager.LoadScene("Juno 1");
     }
 
     public void GameQuit(){
-
+        Application.Quit();
     }
 }

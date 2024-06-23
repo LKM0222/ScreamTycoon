@@ -70,6 +70,7 @@ public class ObstacleController : MonoBehaviour
         var temp = lastCustomer.speed; //원래 속도 저장
         lastCustomer.speed = 0f;//손님 잠시 멈춤 (상태변경)
         lastCustomer.animator.SetInteger("AniNumber", 2);
+        lastCustomer.GetComponent<AudioSource>().Play(); //비명
 
         yield return new WaitForSeconds(1f); //1초 기다린후에 전부 복구
         obstacleobj.GetComponent<SpriteRenderer>().sprite = idleSprite;

@@ -40,7 +40,7 @@ public class HitboxController : MonoBehaviour
                 return;
             var temp = customerObj.GetComponent<TestMoving>();
             var guestData = DataManager.Instance.GetCustomerData(temp);
-
+            
             switch (hitCount)
             {
                 case 2: //perfect
@@ -55,7 +55,6 @@ public class HitboxController : MonoBehaviour
                     GameManager.Instance.income += guestData.bonus_money;
 
                     GameManager.Instance.clear_perfect += 1;
-                    GameManager.Instance.clear_customer += 1;
                     print("perfect!" + keyCode);
                     break;
                 case 1: //Near
@@ -71,7 +70,6 @@ public class HitboxController : MonoBehaviour
                     GameManager.Instance.income += guestData.bonus_money;
 
                     GameManager.Instance.clear_near += 1;
-                    GameManager.Instance.clear_customer += 1;
                     print("Near!" + keyCode);
                     break;
                 default: //bad

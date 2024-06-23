@@ -27,13 +27,6 @@ public class ShopItem : MonoBehaviour
         SetItem();
     }
 
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     #region public method
 
     public void OnBuyBtnClick()
@@ -46,10 +39,12 @@ public class ShopItem : MonoBehaviour
                     GameManager.Instance.DollStaffAction?.Invoke(true);// dollStaff = true;
                     break;
                 case 5:
-                    GameManager.Instance.EnterStaffAction?.Invoke(true);// enterStaff = true;
+                    GameManager.Instance.IsEnterStaff = true;// enterStaff = true;
+                    GameManager.Instance.staffs[0].SetActive(true);
                     break;
                 case 6:
                     GameManager.Instance.IsLostStaff = true;// lostStaff = true;
+                    GameManager.Instance.staffs[1].SetActive(true);
                     break;
             }
             GameManager.Instance.income -= obstacle.obstacle_price; //구매완료 후 빼줌.
@@ -61,7 +56,7 @@ public class ShopItem : MonoBehaviour
     #region pirvate method
     private void SetItem()
     {
-        itemImg.sprite = obstacle.obstacleImg; //아이템 이미지
+        // itemImg.sprite = obstacle.obstacleImg; //아이템 이미지
         itemEvalu.text = obstacle.mouth_condition.ToString(); //요구 입소문
         itemName.text = obstacle.obstacle_type; //아이템 이름
         itemValue.text = obstacle.obstacle_price.ToString(); //아이템 가격

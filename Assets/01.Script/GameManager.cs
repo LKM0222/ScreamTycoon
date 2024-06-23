@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
     [Header("Staff Flag")] //Gorani 여기 스태프 플래그 만들어뒀는데 플래그 true일때 지정된 스태프가 활성화되도록 하면 될것같아요
     //public bool dollStaff; //인형스태프  //인형스태프는 구현이 조금 복잡하던데 어떻게 해야될지 기획자와 한번 상의해보셔야될거같아요
     public Action<bool> DollStaffAction;
-    public Action<bool> EnterStaffAction;
+    public bool IsEnterStaff;
     public bool IsLostStaff;
 
     //New Spawn Guest Action
@@ -58,6 +58,7 @@ public class GameManager : MonoBehaviour
     int second;
     #endregion
 
+    public GameObject[] staffs;
 
 
 
@@ -86,6 +87,7 @@ public class GameManager : MonoBehaviour
     {
         audio.Play();
         score = 0; //스테이지 점수 0으로 초기화
+        clear_customer = 1; //방문수 1으로 초기화
         StartCoroutine(StartTimer()); //타이머 활성화
     }
 

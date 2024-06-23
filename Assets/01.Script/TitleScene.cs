@@ -10,7 +10,7 @@ public class TitleScene : MonoBehaviour
     }
 
     public void Credit(){
-
+            
     }
 
     public void GameQuit(){

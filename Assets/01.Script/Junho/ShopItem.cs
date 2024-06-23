@@ -8,7 +8,7 @@ using System;
 
 [Serializable]
 public class ShopItem : MonoBehaviour
-{   
+{
     [SerializeField] int obstacleNum; //기물번호
     [SerializeField] ObstacleData obstacle; //기물
     //UI
@@ -21,42 +21,46 @@ public class ShopItem : MonoBehaviour
     [SerializeField] Button itemButBtn; //구매 버튼
 
 
-    private void OnEnable() {
+    private void OnEnable()
+    {
         obstacle = DataManager.Instance.GetObstacle(obstacleNum);
         SetItem();
     }
-    
+
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     #region public method
 
-    public void OnBuyBtnClick(){ //아이템 구매 버튼 눌렀을 때
-        if(GameManager.Instance.income >= obstacle.obstacle_price){
+    public void OnBuyBtnClick()
+    { //아이템 구매 버튼 눌렀을 때
+        if (GameManager.Instance.income >= obstacle.obstacle_price)
+        {
             switch (obstacleNum)
             {
                 case 4:
-                    GameManager.Instance.dollStaff = true;
-                break;
+                    GameManager.Instance.DollStaffAction?.Invoke(true);// dollStaff = true;
+                    break;
                 case 5:
-                    GameManager.Instance.enterStaff = true;
-                break;
+                    GameManager.Instance.EnterStaffAction?.Invoke(true);// enterStaff = true;
+                    break;
                 case 6:
-                    GameManager.Instance.lostStaff = true;
-                break;
+                    GameManager.Instance.LostStaffAction?.Invoke(true);// lostStaff = true;
+                    break;
             }
             GameManager.Instance.income -= obstacle.obstacle_price; //구매완료 후 빼줌.
         }
-        
+
     }
     #endregion
 
     #region pirvate method
-    private void SetItem(){
+    private void SetItem()
+    {
         itemImg.sprite = obstacle.obstacleImg; //아이템 이미지
         itemEvalu.text = obstacle.mouth_condition.ToString(); //요구 입소문
         itemName.text = obstacle.obstacle_type; //아이템 이름

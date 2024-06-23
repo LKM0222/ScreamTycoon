@@ -261,6 +261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   animator: {fileID: 2197607199687384795}
+  guestType: 2
 --- !u!61 &8835245014649986305
 BoxCollider2D:
   m_ObjectHideFlags: 0

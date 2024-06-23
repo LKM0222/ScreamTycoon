@@ -45,10 +45,9 @@ public class HitboxController : MonoBehaviour
                     obstacleController.hitFlag = true;
                     GameManager.Instance.score +=
                         ObstacleController.Instance.obstacleobj.GetComponent<Obstacle>().obstacle.perfect_score; //오브젝트별 점수, 등등 다 받아야됨.
-
-
-                    GameManager.Instance.clear_evalu += 5; //손님이 제공하는 입소문
-                    GameManager.Instance.clear_income += 100; //손님이 지불하는 돈
+                                       
+                    GameManager.Instance.clear_evalu += guestData.mouth_value; //손님이 제공하는 입소문
+                    GameManager.Instance.clear_income += guestData.bonus_money;// 100; //손님이 지불하는 돈
 
                     GameManager.Instance.evaluate += 5;
                     GameManager.Instance.income += 100;

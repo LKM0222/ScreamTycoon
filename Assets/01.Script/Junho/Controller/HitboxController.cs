@@ -36,6 +36,8 @@ public class HitboxController : MonoBehaviour
             pressKey = false; //한번 키를 눌렀으면 다시 못누르게
 
             //손님데이터 받아와야하는곳 Gorani
+            if (customerObj == null)
+                return;
             var temp = customerObj.GetComponent<TestMoving>();
             var guestData = DataManager.Instance.GetCustomerData(temp);
 
@@ -45,7 +47,7 @@ public class HitboxController : MonoBehaviour
                     obstacleController.hitFlag = true;
                     GameManager.Instance.score +=
                         ObstacleController.Instance.obstacleobj.GetComponent<Obstacle>().obstacle.perfect_score; //오브젝트별 점수, 등등 다 받아야됨.
-                                       
+
                     GameManager.Instance.clear_evalu += guestData.mouth_value; //손님이 제공하는 입소문
                     GameManager.Instance.clear_income += guestData.bonus_money;// 100; //손님이 지불하는 돈
 

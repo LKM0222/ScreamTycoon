@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3474336655871509123}
   - component: {fileID: 802260835939237736}
+  - component: {fileID: 310102265943418002}
   m_Layer: 0
   m_Name: Lost_LittleGirl
   m_TagString: Untagged
@@ -84,3 +85,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &310102265943418002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2006757827679172288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 245534c4257c922428f76725bce8d1f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

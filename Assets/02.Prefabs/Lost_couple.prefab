@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1635135455585309223}
   - component: {fileID: 1912455000074928159}
+  - component: {fileID: 8456161169919435965}
   m_Layer: 0
   m_Name: Lost_couple
   m_TagString: Untagged
@@ -84,3 +85,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8456161169919435965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2225399453142394520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 245534c4257c922428f76725bce8d1f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

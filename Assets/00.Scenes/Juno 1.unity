@@ -176,6 +176,7 @@ MonoBehaviour:
   idleSprite: {fileID: 21300000, guid: 584d8de09709b3444b363c79b8b67f30, type: 3}
   spawnFlag: 1
   hitbodcontroller: {fileID: 405337856}
+  LostSpawner: {fileID: 0}
 --- !u!1 &37491451
 GameObject:
   m_ObjectHideFlags: 0
@@ -345,7 +346,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -64.043945, y: 50.639526}
-  m_SizeDelta: {x: 521.9119, y: 148.7209}
+  m_SizeDelta: {x: 647.9324, y: 259.1834}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &42802754
 MonoBehaviour:
@@ -514,6 +515,7 @@ MonoBehaviour:
   idleSprite: {fileID: 21300000, guid: dfafe566548331e4fa5f540202c2e429, type: 3}
   spawnFlag: 1
   hitbodcontroller: {fileID: 443502216}
+  LostSpawner: {fileID: 0}
 --- !u!1 &94879777
 GameObject:
   m_ObjectHideFlags: 0
@@ -7236,6 +7238,11 @@ MonoBehaviour:
   clear_evalu: 0
   timeText: {fileID: 944995037}
   audio: {fileID: 1001049741}
+  lostObjs:
+  - {fileID: 2225399453142394520, guid: 3506de2ec0ac74e4588573566f2d0b48, type: 3}
+  - {fileID: 2006757827679172288, guid: 6ea10bb1d55b48642a8331cbf1aac66d, type: 3}
+  - {fileID: 4391404129943369923, guid: 23087b97618a7a54bba10da3a35d7e5e, type: 3}
+  - {fileID: 5054645243313028990, guid: f46ba43d2d295764eb4b39088aee0edd, type: 3}
 --- !u!4 &1390238580
 Transform:
   m_ObjectHideFlags: 0
@@ -8275,7 +8282,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1308672663
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 470e97d1885768a40bfb5e248209ca1c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -8768,7 +8775,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 47.3, y: 19.7}
-  m_SizeDelta: {x: 521.9119, y: 190.5055}
+  m_SizeDelta: {x: 652.0526, y: 253.9494}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1614986469
 MonoBehaviour:
@@ -9391,7 +9398,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1308672663
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 8b68c4b892c0a5d4ba1e338ab457ba72, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -9856,6 +9863,7 @@ MonoBehaviour:
   idleSprite: {fileID: 21300000, guid: 66818450de0e69c4aaf4c97a273e47b2, type: 3}
   spawnFlag: 1
   hitbodcontroller: {fileID: 785661023}
+  LostSpawner: {fileID: 0}
 --- !u!1 &1844123954
 GameObject:
   m_ObjectHideFlags: 0
@@ -12216,6 +12224,7 @@ MonoBehaviour:
   idleSprite: {fileID: 21300000, guid: 550083d248f9cb448b0ad6c31f693200, type: 3}
   spawnFlag: 1
   hitbodcontroller: {fileID: 229071576}
+  LostSpawner: {fileID: 0}
 --- !u!1 &2129960542
 GameObject:
   m_ObjectHideFlags: 0

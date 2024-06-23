@@ -48,6 +48,7 @@ public class ShopItem : MonoBehaviour
             }
             GameManager.Instance.income -= obstacle.obstacle_price; //구매완료 후 빼줌.
             GameManager.Instance.finalSpend += obstacle.obstacle_price; //누적사용금
+            this.itemButBtn.gameObject.SetActive(false);
         }
 
     }

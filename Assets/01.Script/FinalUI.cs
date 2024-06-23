@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FinalUI : MonoBehaviour
 {
@@ -28,9 +29,9 @@ public class FinalUI : MonoBehaviour
         if(Input.GetMouseButtonDown(0)){
             gameoverUI.SetActive(true);
             if(GameManager.Instance.finalSpend > GameManager.Instance.finalIncome)
-                gameoverUI.GetComponent<SpriteRenderer>().sprite = overSp;
+                gameoverUI.GetComponent<Image>().sprite = overSp;
             else{
-                gameoverUI.GetComponent<SpriteRenderer>().sprite = clearSp;
+                gameoverUI.GetComponent<Image>().sprite = clearSp;
             }
         }
     }

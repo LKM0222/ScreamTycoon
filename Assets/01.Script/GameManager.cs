@@ -66,7 +66,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject[] staffs;
 
-    int turnnum;
+    public int turnnum = 1;
 
 
     #region LifeCycle

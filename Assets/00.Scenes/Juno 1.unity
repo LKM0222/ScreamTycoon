@@ -155,6 +155,7 @@ Transform:
   m_Children:
   - {fileID: 405337855}
   - {fileID: 355164011}
+  - {fileID: 1230239067}
   m_Father: {fileID: 1851594540}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &22046990
@@ -176,7 +177,7 @@ MonoBehaviour:
   idleSprite: {fileID: 21300000, guid: 584d8de09709b3444b363c79b8b67f30, type: 3}
   spawnFlag: 1
   hitbodcontroller: {fileID: 405337856}
-  LostSpawner: {fileID: 0}
+  LostSpawner: {fileID: 1230239066}
 --- !u!1 &37491451
 GameObject:
   m_ObjectHideFlags: 0
@@ -494,6 +495,7 @@ Transform:
   m_Children:
   - {fileID: 443502215}
   - {fileID: 151995113}
+  - {fileID: 1960590230}
   m_Father: {fileID: 1851594540}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &63951700
@@ -515,7 +517,7 @@ MonoBehaviour:
   idleSprite: {fileID: 21300000, guid: dfafe566548331e4fa5f540202c2e429, type: 3}
   spawnFlag: 1
   hitbodcontroller: {fileID: 443502216}
-  LostSpawner: {fileID: 0}
+  LostSpawner: {fileID: 1960590229}
 --- !u!1 &94879777
 GameObject:
   m_ObjectHideFlags: 0
@@ -1185,6 +1187,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 205285025}
   m_CullTransparentMesh: 1
+--- !u!1 &206056467
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 206056468}
+  m_Layer: 0
+  m_Name: LostSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &206056468
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 206056467}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.02, y: 0.3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2129741095}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &213577020
 GameObject:
   m_ObjectHideFlags: 0
@@ -6314,6 +6347,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1079761287}
   m_CullTransparentMesh: 1
+--- !u!1 &1089446848
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1089446849}
+  m_Layer: 0
+  m_Name: LostSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1089446849
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089446848}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.13, y: 0.3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1843178108}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1130123572
 GameObject:
   m_ObjectHideFlags: 0
@@ -6693,6 +6757,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1226156699}
   m_CullTransparentMesh: 1
+--- !u!1 &1230239066
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1230239067}
+  m_Layer: 0
+  m_Name: LostSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1230239067
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1230239066}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.75, y: 0.3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 22046989}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1240940135
 GameObject:
   m_ObjectHideFlags: 0
@@ -7238,6 +7333,7 @@ MonoBehaviour:
   clear_evalu: 0
   timeText: {fileID: 944995037}
   audio: {fileID: 1001049741}
+  IsLostStaff: 0
   lostObjs:
   - {fileID: 2225399453142394520, guid: 3506de2ec0ac74e4588573566f2d0b48, type: 3}
   - {fileID: 2006757827679172288, guid: 6ea10bb1d55b48642a8331cbf1aac66d, type: 3}
@@ -9842,6 +9938,7 @@ Transform:
   m_Children:
   - {fileID: 785661022}
   - {fileID: 1536103457}
+  - {fileID: 1089446849}
   m_Father: {fileID: 1851594540}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1843178109
@@ -9863,7 +9960,7 @@ MonoBehaviour:
   idleSprite: {fileID: 21300000, guid: 66818450de0e69c4aaf4c97a273e47b2, type: 3}
   spawnFlag: 1
   hitbodcontroller: {fileID: 785661023}
-  LostSpawner: {fileID: 0}
+  LostSpawner: {fileID: 1089446848}
 --- !u!1 &1844123954
 GameObject:
   m_ObjectHideFlags: 0
@@ -11413,6 +11510,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1948714838}
   m_CullTransparentMesh: 1
+--- !u!1 &1960590229
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1960590230}
+  m_Layer: 0
+  m_Name: LostSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1960590230
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1960590229}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.11, y: 0.3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 63951699}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2002588140
 GameObject:
   m_ObjectHideFlags: 0
@@ -12203,6 +12331,7 @@ Transform:
   m_Children:
   - {fileID: 229071575}
   - {fileID: 724978077}
+  - {fileID: 206056468}
   m_Father: {fileID: 1851594540}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2129741096
@@ -12224,7 +12353,7 @@ MonoBehaviour:
   idleSprite: {fileID: 21300000, guid: 550083d248f9cb448b0ad6c31f693200, type: 3}
   spawnFlag: 1
   hitbodcontroller: {fileID: 229071576}
-  LostSpawner: {fileID: 0}
+  LostSpawner: {fileID: 206056467}
 --- !u!1 &2129960542
 GameObject:
   m_ObjectHideFlags: 0

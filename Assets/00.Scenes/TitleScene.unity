@@ -205,7 +205,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 184315017}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1943952366}
+        m_TargetAssemblyTypeName: TitleScene, Assembly-CSharp
+        m_MethodName: GameStart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &184315017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -875,7 +887,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1707298229}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1943952366}
+        m_TargetAssemblyTypeName: TitleScene, Assembly-CSharp
+        m_MethodName: Credit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1707298229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -992,6 +1016,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1943952365}
   - component: {fileID: 1943952364}
+  - component: {fileID: 1943952366}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -1066,6 +1091,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1943952366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943952363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25411fcbf2cf6bf4da92111f22ef1c57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2055809193
 GameObject:
   m_ObjectHideFlags: 0
@@ -1282,7 +1319,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2072585523}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1943952366}
+        m_TargetAssemblyTypeName: TitleScene, Assembly-CSharp
+        m_MethodName: GameQuit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2072585523
 MonoBehaviour:
   m_ObjectHideFlags: 0

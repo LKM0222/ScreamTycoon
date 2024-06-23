@@ -57,6 +57,12 @@ TagManager:
   - name: Obstacle
     uniqueID: 1227296813
     locked: 0
+  - name: Lost
+    uniqueID: 2625389699
+    locked: 0
+  - name: Staff
+    uniqueID: 1308672663
+    locked: 0
   - name: Customer
     uniqueID: 1486131383
     locked: 0

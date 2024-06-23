@@ -46,11 +46,12 @@ public class GameManager : MonoBehaviour
     public Action<bool> DollStaffAction;
     public Action<bool> EnterStaffAction;
     public Action<bool> LostStaffAction;
-    //public bool enterStaff; //입구스태프
-    //public bool lostStaff; //분실물 스태프
 
     //New Spawn Guest Action
     public Action NewSpawnAction;
+
+    public GameObject[] lostObjs;
+    
 
     #region Time
     int minute;

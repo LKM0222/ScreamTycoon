@@ -31,6 +31,9 @@ public class ObstacleController : MonoBehaviour
     [SerializeField] HitboxController hitbodcontroller;
     private Coroutine coroutine;
 
+    [SerializeField] GameObject LostSpawner;
+
+
     private void Start()
     {
         GameManager.Instance.NewSpawnAction -= ResetFlag;
@@ -58,19 +61,44 @@ public class ObstacleController : MonoBehaviour
     public IEnumerator HitDetectCoroutine()
     {
         yield return new WaitUntil(() => hitFlag == true); //플래그를 잘 맞췄다면
+        if(hitbodcontroller.customerObj != null){
+            obstacleobj.GetComponent<SpriteRenderer>().sprite = actionSprite; //장애물 활성화
+            var testMoving = hitbodcontroller.customerObj.GetComponent<TestMoving>();
+            var temp = testMoving.speed; //원래 속도 저장
+            testMoving.speed = 0f;//손님 잠시 멈춤 (상태변경)
+            testMoving.animator.SetInteger("AniNumber", 2);
 
-        obstacleobj.GetComponent<SpriteRenderer>().sprite = actionSprite; //장애물 활성화
-        var testMoving = hitbodcontroller.customerObj.GetComponent<TestMoving>();
-        var temp = testMoving.speed; //원래 속도 저장
-        testMoving.speed = 0f;//손님 잠시 멈춤 (상태변경)
-        testMoving.animator.SetInteger("AniNumber", 2);
+            yield return new WaitForSeconds(1f); //1초 기다린후에 전부 복구
+            obstacleobj.GetComponent<SpriteRenderer>().sprite = idleSprite;
+            hitbodcontroller.customerObj.GetComponent<TestMoving>().speed = temp;
+            testMoving.animator.SetInteger("AniNumber", 1);
+            hitFlag = false;
+            obstacleobj.gameObject.SetActive(!hitFlag);
 
-        yield return new WaitForSeconds(1f); //1초 기다린후에 전부 복구
-        obstacleobj.GetComponent<SpriteRenderer>().sprite = idleSprite;
-        hitbodcontroller.customerObj.GetComponent<TestMoving>().speed = temp;
-        testMoving.animator.SetInteger("AniNumber", 1);
-        hitFlag = false;
-        obstacleobj.gameObject.SetActive(!hitFlag);
+            
+        }
+        //분실물 생성
+        if(UnityEngine.Random.RandomRange(0,101) <= 50){
+            print("lost spawn");
+            switch(hitbodcontroller.customerObj.GetComponent<TestMoving>().guestType){
+                case GuestType.Couple:
+                    Instantiate(GameManager.Instance.lostObjs[0], LostSpawner.transform.position, Quaternion.identity, LostSpawner.transform);
+                break;
 
+                case GuestType.LittleGirl:
+                    Instantiate(GameManager.Instance.lostObjs[1], LostSpawner.transform.position, Quaternion.identity, LostSpawner.transform);
+                break;
+
+                case GuestType.Muscle:
+                    Instantiate(GameManager.Instance.lostObjs[2], LostSpawner.transform.position, Quaternion.identity, LostSpawner.transform);
+                break;
+
+                case GuestType.Streamer:
+                    Instantiate(GameManager.Instance.lostObjs[3], LostSpawner.transform.position, Quaternion.identity, LostSpawner.transform);
+                break;
+            }
+        }
+
+        
     }
 }

@@ -155,6 +155,7 @@ Transform:
   m_Children:
   - {fileID: 405337855}
   - {fileID: 355164011}
+  - {fileID: 180491877}
   m_Father: {fileID: 1851594540}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &22046990
@@ -176,6 +177,7 @@ MonoBehaviour:
   idleSprite: {fileID: 21300000, guid: 584d8de09709b3444b363c79b8b67f30, type: 3}
   spawnFlag: 1
   hitbodcontroller: {fileID: 405337856}
+  LostSpawner: {fileID: 180491876}
 --- !u!1 &37491451
 GameObject:
   m_ObjectHideFlags: 0
@@ -493,6 +495,7 @@ Transform:
   m_Children:
   - {fileID: 443502215}
   - {fileID: 151995113}
+  - {fileID: 663212179}
   m_Father: {fileID: 1851594540}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &63951700
@@ -514,6 +517,7 @@ MonoBehaviour:
   idleSprite: {fileID: 21300000, guid: dfafe566548331e4fa5f540202c2e429, type: 3}
   spawnFlag: 1
   hitbodcontroller: {fileID: 443502216}
+  LostSpawner: {fileID: 663212178}
 --- !u!1 &94879777
 GameObject:
   m_ObjectHideFlags: 0
@@ -591,6 +595,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 94879777}
   m_CullTransparentMesh: 1
+--- !u!1 &102684994
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 102684995}
+  m_Layer: 0
+  m_Name: LostSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &102684995
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102684994}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.37999988, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1843178108}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &113892199
 GameObject:
   m_ObjectHideFlags: 0
@@ -1002,6 +1037,68 @@ MonoBehaviour:
     fail_score: 0
     obstacleImg: {fileID: 0}
   obstacleNum: 0
+--- !u!1 &159586896
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 159586897}
+  m_Layer: 0
+  m_Name: LostSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &159586897
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 159586896}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.38, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2129741095}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &180491876
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 180491877}
+  m_Layer: 0
+  m_Name: LostSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &180491877
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 180491876}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.37999988, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 22046989}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &203072961
 GameObject:
   m_ObjectHideFlags: 0
@@ -4100,6 +4197,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &663212178
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 663212179}
+  m_Layer: 0
+  m_Name: LostSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &663212179
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663212178}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.37999988, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 63951699}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &672916606
 GameObject:
@@ -7236,6 +7364,11 @@ MonoBehaviour:
   clear_evalu: 0
   timeText: {fileID: 944995037}
   audio: {fileID: 1001049741}
+  lostObjs:
+  - {fileID: 2225399453142394520, guid: 3506de2ec0ac74e4588573566f2d0b48, type: 3}
+  - {fileID: 2006757827679172288, guid: 6ea10bb1d55b48642a8331cbf1aac66d, type: 3}
+  - {fileID: 4391404129943369923, guid: 23087b97618a7a54bba10da3a35d7e5e, type: 3}
+  - {fileID: 5054645243313028990, guid: f46ba43d2d295764eb4b39088aee0edd, type: 3}
 --- !u!4 &1390238580
 Transform:
   m_ObjectHideFlags: 0
@@ -9639,6 +9772,7 @@ Transform:
   m_Children:
   - {fileID: 785661022}
   - {fileID: 1536103457}
+  - {fileID: 102684995}
   m_Father: {fileID: 1851594540}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1843178109
@@ -9660,6 +9794,7 @@ MonoBehaviour:
   idleSprite: {fileID: 21300000, guid: 66818450de0e69c4aaf4c97a273e47b2, type: 3}
   spawnFlag: 1
   hitbodcontroller: {fileID: 785661023}
+  LostSpawner: {fileID: 102684994}
 --- !u!1 &1844123954
 GameObject:
   m_ObjectHideFlags: 0
@@ -11294,6 +11429,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2002913236}
   - component: {fileID: 2002913237}
+  - component: {fileID: 2002913238}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -11326,6 +11462,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f08ea158c9f96c48a1ec2b9f387d522, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2002913238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2002913235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10213b0369eec8c469d05bf227a21c9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2004431656
@@ -11999,6 +12147,7 @@ Transform:
   m_Children:
   - {fileID: 229071575}
   - {fileID: 724978077}
+  - {fileID: 159586897}
   m_Father: {fileID: 1851594540}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2129741096
@@ -12020,6 +12169,7 @@ MonoBehaviour:
   idleSprite: {fileID: 21300000, guid: 550083d248f9cb448b0ad6c31f693200, type: 3}
   spawnFlag: 1
   hitbodcontroller: {fileID: 229071576}
+  LostSpawner: {fileID: 159586896}
 --- !u!1 &2129960542
 GameObject:
   m_ObjectHideFlags: 0

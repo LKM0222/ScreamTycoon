@@ -30,6 +30,7 @@ public class ObstacleController : MonoBehaviour
     [SerializeField] bool spawnFlag = true; //손님이 스폰되었을때 (나중에 수정필요)
     [SerializeField] HitboxController hitbodcontroller;
     private Coroutine coroutine;
+    //private TestMoving lastCustomer;
 
     [SerializeField] GameObject LostSpawner;
 
@@ -57,27 +58,26 @@ public class ObstacleController : MonoBehaviour
         }
     }
 
-   
+
     public IEnumerator HitDetectCoroutine()
     {
         yield return new WaitUntil(() => hitFlag == true); //플래그를 잘 맞췄다면
-        if(hitbodcontroller.customerObj != null){
-            obstacleobj.GetComponent<SpriteRenderer>().sprite = actionSprite; //장애물 활성화
-            var testMoving = hitbodcontroller.customerObj.GetComponent<TestMoving>();
-            var temp = testMoving.speed; //원래 속도 저장
-            testMoving.speed = 0f;//손님 잠시 멈춤 (상태변경)
-            testMoving.animator.SetInteger("AniNumber", 2);
-
-            yield return new WaitForSeconds(1f); //1초 기다린후에 전부 복구
-            obstacleobj.GetComponent<SpriteRenderer>().sprite = idleSprite;
-            hitbodcontroller.customerObj.GetComponent<TestMoving>().speed = temp;
-            testMoving.animator.SetInteger("AniNumber", 1);
-            hitFlag = false;
-            obstacleobj.gameObject.SetActive(!hitFlag);
-
-            
-        }
+        
         //분실물 생성
+        obstacleobj.GetComponent<SpriteRenderer>().sprite = actionSprite; //장애물 활성화
+        var lastCustomer = hitbodcontroller.customerObj.GetComponent<TestMoving>();
+
+        var temp = lastCustomer.speed; //원래 속도 저장
+        lastCustomer.speed = 0f;//손님 잠시 멈춤 (상태변경)
+        lastCustomer.animator.SetInteger("AniNumber", 2);
+
+        yield return new WaitForSeconds(1f); //1초 기다린후에 전부 복구
+        obstacleobj.GetComponent<SpriteRenderer>().sprite = idleSprite;
+        lastCustomer.speed = temp;
+        lastCustomer.animator.SetInteger("AniNumber", 1);
+        hitFlag = false;
+        obstacleobj.gameObject.SetActive(!hitFlag);
+        
         if(UnityEngine.Random.RandomRange(0,101) <= 50){
             print("lost spawn");
             switch(hitbodcontroller.customerObj.GetComponent<TestMoving>().guestType){

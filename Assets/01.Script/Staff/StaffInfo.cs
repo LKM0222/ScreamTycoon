@@ -11,7 +11,7 @@ public class StaffInfo : MonoBehaviour
         switch (type)
         {
             case StaffType.Lost:
-                GameManager.Instance.LostStaffAction += ListenStaffAction;
+                GameManager.Instance.IsLostStaff += ListenStaffAction;
                 break;
             case StaffType.Enter:
                 GameManager.Instance.EnterStaffAction += ListenStaffAction;

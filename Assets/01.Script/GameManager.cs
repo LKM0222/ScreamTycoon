@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
     //public bool dollStaff; //인형스태프  //인형스태프는 구현이 조금 복잡하던데 어떻게 해야될지 기획자와 한번 상의해보셔야될거같아요
     public Action<bool> DollStaffAction;
     public Action<bool> EnterStaffAction;
-    public Action<bool> LostStaffAction;
+    public bool IsLostStaff;
 
     //New Spawn Guest Action
     public Action NewSpawnAction;

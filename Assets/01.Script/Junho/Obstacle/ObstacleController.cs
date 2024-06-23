@@ -62,7 +62,7 @@ public class ObstacleController : MonoBehaviour
     public IEnumerator HitDetectCoroutine()
     {
         yield return new WaitUntil(() => hitFlag == true); //플래그를 잘 맞췄다면
-        
+
         //분실물 생성
         obstacleobj.GetComponent<SpriteRenderer>().sprite = actionSprite; //장애물 활성화
         var lastCustomer = hitbodcontroller.customerObj.GetComponent<TestMoving>();
@@ -77,28 +77,30 @@ public class ObstacleController : MonoBehaviour
         lastCustomer.animator.SetInteger("AniNumber", 1);
         hitFlag = false;
         obstacleobj.gameObject.SetActive(!hitFlag);
-        
-        if(UnityEngine.Random.RandomRange(0,101) <= 50){
+
+        if (UnityEngine.Random.RandomRange(0, 101) <= 50 && GameManager.Instance.IsLostStaff == true)
+        {
             print("lost spawn");
-            switch(hitbodcontroller.customerObj.GetComponent<TestMoving>().guestType){
+            switch (lastCustomer.guestType)
+            {
                 case GuestType.Couple:
                     Instantiate(GameManager.Instance.lostObjs[0], LostSpawner.transform.position, Quaternion.identity, LostSpawner.transform);
-                break;
+                    break;
 
                 case GuestType.LittleGirl:
                     Instantiate(GameManager.Instance.lostObjs[1], LostSpawner.transform.position, Quaternion.identity, LostSpawner.transform);
-                break;
+                    break;
 
                 case GuestType.Muscle:
                     Instantiate(GameManager.Instance.lostObjs[2], LostSpawner.transform.position, Quaternion.identity, LostSpawner.transform);
-                break;
+                    break;
 
                 case GuestType.Streamer:
                     Instantiate(GameManager.Instance.lostObjs[3], LostSpawner.transform.position, Quaternion.identity, LostSpawner.transform);
-                break;
+                    break;
             }
         }
 
-        
+
     }
 }

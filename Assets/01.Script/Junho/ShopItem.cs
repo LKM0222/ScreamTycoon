@@ -49,7 +49,7 @@ public class ShopItem : MonoBehaviour
                     GameManager.Instance.EnterStaffAction?.Invoke(true);// enterStaff = true;
                     break;
                 case 6:
-                    GameManager.Instance.LostStaffAction?.Invoke(true);// lostStaff = true;
+                    GameManager.Instance.IsLostStaff = true;// lostStaff = true;
                     break;
             }
             GameManager.Instance.income -= obstacle.obstacle_price; //구매완료 후 빼줌.

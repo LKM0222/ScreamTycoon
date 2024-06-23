@@ -49,8 +49,8 @@ public class HitboxController : MonoBehaviour
                     GameManager.Instance.clear_evalu += guestData.mouth_value; //손님이 제공하는 입소문
                     GameManager.Instance.clear_income += guestData.bonus_money;// 100; //손님이 지불하는 돈
 
-                    GameManager.Instance.evaluate += 5;
-                    GameManager.Instance.income += 100;
+                    GameManager.Instance.evaluate += guestData.mouth_value;
+                    GameManager.Instance.income += guestData.bonus_money;
 
                     GameManager.Instance.clear_perfect += 1;
                     GameManager.Instance.clear_customer += 1;
@@ -62,11 +62,11 @@ public class HitboxController : MonoBehaviour
                         ObstacleController.Instance.obstacleobj.GetComponent<Obstacle>().obstacle.good_score; //오브젝트별 점수, 등등 다 받아야됨.
 
                     ////손님 데이터 받아와야하는곳 Gorani
-                    GameManager.Instance.clear_evalu += 5;//손님이 제공하는 입소문
-                    GameManager.Instance.clear_income += 100;//손님이 지불하는 돈
+                    GameManager.Instance.clear_evalu += guestData.mouth_value;//손님이 제공하는 입소문
+                    GameManager.Instance.clear_income += guestData.bonus_money;//손님이 지불하는 돈
 
-                    GameManager.Instance.evaluate += 5;
-                    GameManager.Instance.income += 100;
+                    GameManager.Instance.evaluate += guestData.mouth_value;
+                    GameManager.Instance.income += guestData.bonus_money;
 
                     GameManager.Instance.clear_near += 1;
                     GameManager.Instance.clear_customer += 1;

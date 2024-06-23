@@ -344,8 +344,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -64.043945, y: 50.639526}
-  m_SizeDelta: {x: 521.9119, y: 148.7209}
+  m_AnchoredPosition: {x: -83, y: 37.5}
+  m_SizeDelta: {x: 646.6981, y: 262.537}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &42802754
 MonoBehaviour:
@@ -7236,9 +7236,6 @@ MonoBehaviour:
   clear_evalu: 0
   timeText: {fileID: 944995037}
   audio: {fileID: 1001049741}
-  dollStaff: 0
-  enterStaff: 0
-  lostStaff: 0
 --- !u!4 &1390238580
 Transform:
   m_ObjectHideFlags: 0
@@ -7270,10 +7267,11 @@ MonoBehaviour:
   jsonCustomer: {fileID: 4900000, guid: 30d536573e3690842ba3dfab11a919c9, type: 3}
   jsonObstacle: {fileID: 4900000, guid: a563cc24d1c815f42963287bbe942a9b, type: 3}
   customerPrefabs:
-  - {fileID: 8538997789974031881, guid: 100b97c5ace51294fae2fca32a580f54, type: 3}
-  - {fileID: 8538997789974031881, guid: 3d5970b53d629144194cc1fdfe58d835, type: 3}
-  - {fileID: 8538997789974031881, guid: 22c13a6e4b2781c4a95dc6ac2fb109c0, type: 3}
-  - {fileID: 8538997789974031881, guid: 03fbd33bf9bd666449dbb3e970396715, type: 3}
+  - {fileID: 8538997789974031881, guid: 57b07114d5433c04bacd91264723d9fb, type: 3}
+  - {fileID: 8538997789974031881, guid: db916b21c2ded884aa3d9951a9b666d0, type: 3}
+  - {fileID: 8538997789974031881, guid: 62f68ab966f64e548a5ac71ad9ecb5ac, type: 3}
+  - {fileID: 8538997789974031881, guid: 473a2e3303f9fab47841f4ec28263fd9, type: 3}
+  customers: []
   obstacles: []
 --- !u!1 &1417577114
 GameObject:
@@ -8672,7 +8670,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 47.3, y: 19.7}
-  m_SizeDelta: {x: 521.9119, y: 190.5055}
+  m_SizeDelta: {x: 643.8109, y: 259.0009}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1614986469
 MonoBehaviour:

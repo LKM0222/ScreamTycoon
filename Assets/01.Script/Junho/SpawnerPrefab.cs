@@ -32,6 +32,7 @@ public class SpawnerPrefab : MonoBehaviour
         temp.speed = data.customer_speed;  //Gorani ���⼭ �մ� �ӵ� �ʱ�ȭ�߾��
         
         GameManager.Instance.clear_customer += 1; //일단 한명 생성될때마다 방문수1증가
+        GameManager.Instance.finalCustomer += 1;
     }
 
 }

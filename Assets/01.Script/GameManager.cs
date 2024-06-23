@@ -51,6 +51,12 @@ public class GameManager : MonoBehaviour
     public Action NewSpawnAction;
 
     public GameObject[] lostObjs;
+
+    [Header("Final")]
+    public int finalCustomer;
+    public int finalIncome;
+    public int fianlScore;
+    public int finalSpend;
     
 
     #region Time
@@ -60,6 +66,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject[] staffs;
 
+    int turnnum;
 
 
     #region LifeCycle
@@ -85,10 +92,23 @@ public class GameManager : MonoBehaviour
 
     public void ReStart()
     {
-        audio.Play();
-        score = 0; //스테이지 점수 0으로 초기화
-        clear_customer = 1; //방문수 1으로 초기화
-        StartCoroutine(StartTimer()); //타이머 활성화
+        if(turnnum >= DataManager.Instance.level.Length){
+            UIController.Instance.FinalUI.SetActive(true);
+        }
+        else{
+            audio.Play();
+            clear_customer = 1; //방문수 1으로 초기화
+            finalIncome += clear_income; //번 돈 저장
+            fianlScore += score; //누적 점수 저장
+            if(IsEnterStaff) //유지비용
+                finalSpend += 100;
+            if(IsLostStaff)
+                finalSpend += 300;
+
+            score = 0; //스테이지 점수 0으로 초기화
+            turnnum ++; //스테이지 레벨
+            StartCoroutine(StartTimer()); //타이머 활성화
+        }
     }
 
 

@@ -40,7 +40,7 @@ public class HitboxController : MonoBehaviour
                 return;
             var temp = customerObj.GetComponent<TestMoving>();
             var guestData = DataManager.Instance.GetCustomerData(temp);
-            
+
             switch (hitCount)
             {
                 case 2: //perfect

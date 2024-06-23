@@ -40,6 +40,9 @@ public class UIController : MonoBehaviour
     [SerializeField] TMP_Text clear_evaluText;
     [SerializeField] TMP_Text clear_scoreText;
 
+    [Header("FinalUI")]
+    public GameObject FinalUI;
+
 
     // Update is called once per frame
     void Update()
